@@ -44,5 +44,17 @@ function modifica(){
 
 btnMostrar.addEventListener("click", function (event){
     event.preventDefault(); //no hagas lo que haces por defecto
-    console.log("botón btnMostrar presionado");
+    
+    let element = document.createElement("li");
+    element.innerText = "Another item"; // <li>Another item</li> es lo que obtendremos
+    element.classList.add("list-group-item");
+
+    let element2 = element.cloneNode(true);
+
+
+    // listas.item(0).before(element); // Inserta elemento antes de la lista
+    // listas.item(0).prepend(element2); // Inserta el elemento inmediatamente después del ul
+    listas.item(0).append(element); // Inserta el elemento al final de la lista
+    listas.item(0).after(element2); // Inserta el elemento después de la lista
+
 });
